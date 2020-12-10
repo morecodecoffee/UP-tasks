@@ -33,24 +33,46 @@ if (personalMovieDB.count < 10) {
 } else {
     alert('Произошла ошибка');
 }
-// for (let i = 0, movieName, movieRate; i < 2; i++) {
-//     do {
-//         movieName = prompt('Один из последних просмотренных фильмов?', '');
-//     } while (!movieName || movieName.length > 50);
-//     movieRate = prompt('На сколько оцените его?', '');
-//     personalMovieDB.movies[movieName] = movieRate;
+// --ЦИКЛ FOR--
+for (let i = 0; i < 2; i++) {
+    const a = prompt('Один из последних просмотренных фильмов?', ''),
+        b = prompt('На сколько оцените его?', '');
+    if (!a || a.length > 50 || b == null || b == '') {
+        alert('Неверные данные. Попробуйте снова');
+        i--;
+    } else {
+        personalMovieDB.movies[a] = b;
+    }
+}
+
+// --ЦИКЛ WHILE--
+// let i = 0,
+//     a,
+//     b;
+// while (i < 2) {
+//     a = prompt('Один из последних просмотренных фильмов?', '');
+//     b = prompt('На сколько оцените его?', '');
+//     if (!a || a.length > 50 || b == null || b == '') {
+//         alert('Неверные данные. Попробуйте снова');
+//     } else {
+//         personalMovieDB.movies[a] = b;
+//         i++;
+//     }
 // }
 
-let i = 0,
-    movieName,
-    movieRate;
-do {
-    do {
-        movieName = prompt('Один из последних просмотренных фильмов?', '');
-    } while (!movieName || movieName.length > 50);
-    movieRate = prompt('На сколько оцените его?', '');
-    personalMovieDB.movies[movieName] = movieRate;
-    i++;
-} while (i < 2);
+// --ЦИКЛ DO WHILE--
+// let i = 0,
+//     a,
+//     b;
+// do {
+//     a = prompt('Один из последних просмотренных фильмов?', '');
+//     b = prompt('На сколько оцените его?', '');
+//     if (!a || a.length > 50 || b == null || b == '') {
+//         alert('Неверные данные. Попробуйте снова');
+//     } else {
+//         personalMovieDB.movies[a] = b;
+//         i++;
+//     }
+// } while (i < 2);
 
 console.log(personalMovieDB.movies);
